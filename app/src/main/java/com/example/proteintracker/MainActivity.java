@@ -29,22 +29,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(savedInstanceState != null){
-            Log.d("ProteinTracker",savedInstanceState.getString("abc"));
+        if (savedInstanceState != null) {
+            Log.d("ProteinTracker", savedInstanceState.getString("abc"));
         }
 
-        TextView textView = (TextView)findViewById(R.id.mainActivityTextView);
+        TextView textView = (TextView) findViewById(R.id.mainActivityTextView);
         textView.setText(R.string.test_untuk_update_view);
         Button tablebtn = (Button) findViewById(R.id.buttonTable);
         tablebtn.setOnClickListener(tableButtonListener);
-        Button helpBtn = (Button)findViewById(R.id.helpButton);
+        Button helpBtn = (Button) findViewById(R.id.helpButton);
         helpBtn.setOnClickListener(helpButtonListener);
-        Button testBtn = (Button)findViewById(R.id.buttonTest);
+        Button testBtn = (Button) findViewById(R.id.buttonTest);
         testBtn.setOnClickListener(testButtonListener);
-        Button myBtn = (Button)findViewById(R.id.buttonText);
+        Button myBtn = (Button) findViewById(R.id.buttonText);
         myBtn.setOnClickListener(myBtnClickListener);
-
+        Button fragmentBtn = (Button) findViewById(R.id.buttonFrag);
+        fragmentBtn.setOnClickListener(FragOnClickListener);
     }
+    private View.OnClickListener FragOnClickListener = new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(MainActivity.this,MainActivityFragment.class);
+            Bundle e = new Bundle();
+            intent.putExtras(e);
+            startActivity(intent);
+        }
+    };
 
     private View.OnClickListener tableButtonListener = new View.OnClickListener()
     {
