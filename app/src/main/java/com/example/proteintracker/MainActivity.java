@@ -35,20 +35,27 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textView = (TextView)findViewById(R.id.mainActivityTextView);
         textView.setText(R.string.test_untuk_update_view);
+        Button tablebtn = (Button) findViewById(R.id.buttonTable);
+        tablebtn.setOnClickListener(tableButtonListener);
         Button helpBtn = (Button)findViewById(R.id.helpButton);
         helpBtn.setOnClickListener(helpButtonListener);
         Button testBtn = (Button)findViewById(R.id.buttonTest);
         testBtn.setOnClickListener(testButtonListener);
-        Button myBtn = (Button)findViewById(R.id.button1);
+        Button myBtn = (Button)findViewById(R.id.buttonText);
         myBtn.setOnClickListener(myBtnClickListener);
-        myBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditText myEditText = (EditText)findViewById(R.id.editText1);
-                Log.d("Proteintracker",myEditText.getText().toString());
-            }
-        });
+
     }
+
+    private View.OnClickListener tableButtonListener = new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(MainActivity.this,MainActivityTable.class);
+            Bundle d = new Bundle();
+            intent.putExtras(d);
+            startActivity(intent);
+        }
+    };
 
     private View.OnClickListener helpButtonListener = new View.OnClickListener()
     {
@@ -78,8 +85,10 @@ public class MainActivity extends AppCompatActivity {
     {
         @Override
         public void onClick(View view) {
-            EditText myEditText = (EditText)findViewById(R.id.editText1);
-            Log.d("Proteintracker",myEditText.getText().toString());
+            Intent intent = new Intent(MainActivity.this,MainActivity3.class);
+            Bundle c = new Bundle();
+            intent.putExtras(c);
+            startActivity(intent);
         }
 
     };
