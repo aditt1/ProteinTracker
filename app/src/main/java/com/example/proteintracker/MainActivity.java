@@ -45,7 +45,20 @@ public class MainActivity extends AppCompatActivity {
         myBtn.setOnClickListener(myBtnClickListener);
         Button fragmentBtn = (Button) findViewById(R.id.buttonFrag);
         fragmentBtn.setOnClickListener(FragOnClickListener);
+        Button mahasiswaBtn = (Button) findViewById(R.id.btnMahasiswa);
+        mahasiswaBtn.setOnClickListener(MhsOnClickListener);
     }
+    private View.OnClickListener MhsOnClickListener = new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(MainActivity.this,MainActivityMahasiswa.class);
+            Bundle f = new Bundle();
+            intent.putExtras(f);
+            startActivity(intent);
+        }
+    };
+
     private View.OnClickListener FragOnClickListener = new View.OnClickListener()
     {
         @Override

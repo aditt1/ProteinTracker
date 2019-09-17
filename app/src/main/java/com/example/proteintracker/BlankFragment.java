@@ -75,7 +75,7 @@ public class BlankFragment extends Fragment {
         TextView txtNama = getView().findViewById(R.id.txtNama);
         txtNama.setText(mParam1 + ", " + mParam2);
 
-        Button btnPassData = (Button) view.findViewById(R.id.btnkirimfrag);
+        Button btnPassData = (Button) view.findViewById(R.id.btnKirim);
         btnPassData.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

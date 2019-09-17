@@ -15,7 +15,7 @@ public class MainActivityFragment extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_fragment);
 
-        Button btnAct = findViewById(R.id.buttonAct);
+        Button btnAct = findViewById(R.id.btnActivity);
         btnAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
