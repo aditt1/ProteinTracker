@@ -2,43 +2,38 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivityFragment">
-
-    <Button
-        android:id="@+id/btnActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="60dp"
-        android:text="Activity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNama" />
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="409dp"
-        android:layout_height="322dp"
-        android:layout_marginTop="87dp"
-        android:layout_marginEnd="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnActivity">
-
-    </FrameLayout>
 
     <TextView
         android:id="@+id/txtNama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="168dp"
+        android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="54dp"
+        android:text="Activity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNama" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="409dp"
+        android:layout_height="297dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="434dp">
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
