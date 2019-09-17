@@ -15,13 +15,13 @@ public class MainActivityFragment extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_fragment);
 
-        Button btnAct = findViewById(R.id.buttonAct);
+        Button btnAct = findViewById(R.id.btnActivity);
         btnAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                BlankFragment blankFragment = BlankFragment.newInstance("Hai", "Para Prgmobers");
-                ft.replace(R.id.frameLayout, blankFragment);
+                BlankFragment proteinFragment = BlankFragment.newInstance("Hai", "Para Prgmobers");
+                ft.replace(R.id.frameLayout, proteinFragment);
                 ft.commit();
             }
         });
@@ -30,8 +30,8 @@ public class MainActivityFragment extends AppCompatActivity
     @Override
     public void SendData(String Message) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        BlankFragment2 blankFragment2 = BlankFragment2.newInstance(Message, "Para Progmobers");
-        ft.replace(R.id.frameLayout, blankFragment2);
+        BlankFragment2 proteinFragment2 = BlankFragment2.newInstance(Message, "Para Progmobers");
+        ft.replace(R.id.frameLayout, proteinFragment2);
         ft.commit();
     }
 }

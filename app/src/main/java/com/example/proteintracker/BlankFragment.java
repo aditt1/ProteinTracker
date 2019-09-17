@@ -31,6 +31,7 @@ public class BlankFragment extends Fragment {
     private String mParam2;
 
     SendMessage sm;
+
     public BlankFragment() {
         // Required empty public constructor
     }
@@ -72,11 +73,11 @@ public class BlankFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView txtNama = getView().findViewById(R.id.txtNama);
-        txtNama.setText(mParam1 + ", " + mParam2);
+        TextView txt = getView().findViewById(R.id.txtNama);
+        txt.setText(mParam1 + ", " + mParam2);
 
-        Button btnPassData = (Button) view.findViewById(R.id.btnkirimfrag);
-        btnPassData.setOnClickListener(new View.OnClickListener(){
+        Button btnKirim = (Button) view.findViewById(R.id.btnKirim);
+        btnKirim.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 sm.SendData("Nice");
