@@ -21,7 +21,7 @@ public class MainActivityFragment extends AppCompatActivity
             public void onClick(View view) {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 BlankFragment blankFragment = BlankFragment.newInstance("Hai", "Para Prgmobers");
-                ft.replace(R.id.frameLayout, blankFragment);
+                ft.replace(R.id.frameLayout2, blankFragment);
                 ft.commit();
             }
         });
@@ -31,7 +31,7 @@ public class MainActivityFragment extends AppCompatActivity
     public void SendData(String Message) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         BlankFragment2 blankFragment2 = BlankFragment2.newInstance(Message, "Para Progmobers");
-        ft.replace(R.id.frameLayout, blankFragment2);
+        ft.replace(R.id.frameLayout2, blankFragment2);
         ft.commit();
     }
 }

@@ -7,7 +7,7 @@
     tools:context=".MahasiswaFragment2">
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/txtNim3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="3. Nim Mhs"
@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.283" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/txtNim1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1. Nim Mhs"
@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.129" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/txtNim2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2. Nim Mhs"
@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.212" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/txtNama2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama Mhs"
@@ -55,7 +55,7 @@
         app:layout_constraintVertical_bias="0.212" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/txtNama3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama Mhs"
@@ -67,7 +67,7 @@
         app:layout_constraintVertical_bias="0.283" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/txtNama1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama Mhs"
@@ -79,7 +79,7 @@
         app:layout_constraintVertical_bias="0.129" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnTambah"
         android:layout_width="46dp"
         android:layout_height="40dp"
         android:text="+"

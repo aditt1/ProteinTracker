@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
@@ -20,6 +22,12 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class MahasiswaFragment2 extends Fragment {
+    public static String msgNim = "msg_nim";
+    public static String msgNama = "msg_nama";
+
+    TextView mTextView1,mTextView2;
+    Button mButton;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -65,8 +73,32 @@ public class MahasiswaFragment2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mahasiswa2, container, false);
+        View view = inflater.inflate(R.layout.fragment_mahasiswa2,container,false);
+        mButton = (Button)view.findViewById(R.id.btnTambah);
+        mButton = (Button)view.findViewById(R.id.btnUpdate);
+        mButton = (Button)view.findViewById(R.id.btnDelete);
+        mTextView1 = (TextView)view.findViewById(R.id.txtNim1);
+        mTextView1 = (TextView)view.findViewById(R.id.txtNim2);
+        mTextView1 = (TextView)view.findViewById(R.id.txtNim3);
+        mTextView2 = (TextView)view.findViewById(R.id.txtNama1);
+        mTextView2 = (TextView)view.findViewById(R.id.txtNama2);
+        mTextView2 = (TextView)view.findViewById(R.id.txtNama3);
+
+        String msg1 = getArguments().getString(msgNim);
+        String msg2 = getArguments().getString(msgNama);
+
+        if (msg1 != null && msg1 != ""){
+            mTextView1.setText(msg1);
+        } else {
+            mTextView1.setText("-");
+        }
+
+        if (msg2 != null && msg2 != ""){
+            mTextView2.setText(msg2);
+        } else {
+            mTextView2.setText("-");
+        }
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

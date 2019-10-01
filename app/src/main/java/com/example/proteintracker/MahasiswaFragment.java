@@ -1,15 +1,19 @@
 package com.example.proteintracker;
 
+
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,6 +24,12 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class MahasiswaFragment extends Fragment {
+    public static String msgNim = "msg_nim";
+    public static String msgNama = "msg_nama";
+
+    EditText mEditText;
+    Button mButton;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -54,8 +64,8 @@ public class MahasiswaFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -65,16 +75,38 @@ public class MahasiswaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mahasiswa, container, false);
+        View view = inflater.inflate(R.layout.fragment_mahasiswa, container, false);
+        mEditText = (EditText) view.findViewById(R.id.txtNim);
+        mEditText = (EditText) view.findViewById(R.id.txtNama);
+        mEditText = (EditText) view.findViewById(R.id.txtTempat);
+        mEditText = (EditText) view.findViewById(R.id.txtTanggal);
+        mEditText = (EditText) view.findViewById(R.id.txtAgama);
+        mEditText = (EditText) view.findViewById(R.id.txtKelamin);
+        mEditText = (EditText) view.findViewById(R.id.txtAlamat);
+        mEditText = (EditText) view.findViewById(R.id.txtTelp);
+        mButton = (Button) view.findViewById(R.id.btnSimpan);
+
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String msg = mEditText.getText().toString();
+                MahasiswaFragment mahasiswa = new MahasiswaFragment();
+                Bundle mBundle = new Bundle();
+                mBundle.putString(msgNim, msg);
+                mahasiswa.setArguments(mBundle);
+
+                FragmentManager mFragmentManager = getFragmentManager();
+                FragmentTransaction mFragmentTransaction = mFragmentManager.beginTransaction()
+                        .replace(R.id.FrameLayout,mahasiswa,MahasiswaFragment.class.getSimpleName());
+                mFragmentTransaction.addToBackStack(null).commit();
+
+            }
+        });
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
 
     @Override
     public void onAttach(Context context) {
@@ -105,6 +137,6 @@ public class MahasiswaFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void SendData(View view);
     }
 }
